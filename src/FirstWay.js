@@ -7,16 +7,49 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import FirstWay from "./src/FirstWay";
-import SecondWay from "./src/SecondWay";
 
-export default function App() {
-  return <SecondWay />;
+export default function FirstWay() {
+  return (
+    // <View style={styles.container}>
+    <ImageBackground
+      source={require("../assets/bg.jpg")}
+      style={{ height: "100%", width: "100%" }}
+    >
+      <Image
+        style={{ marginTop: 60, marginLeft: 20 }}
+        source={require("../assets/LOGO.png")}
+      />
+
+      <View style={styles.bottomView}>
+        <Image
+          style={{ alignSelf: "center", marginTop: 40 }}
+          source={require("../assets/lal.png")}
+        />
+
+        <View style={{ marginTop: 24 }}>
+          <Text style={styles.title}>Non-Contact{`\n`}Deliveries</Text>
+          <Text style={styles.subheader}>
+            When placing an order, select the option "Contactless delivery" and
+            the courier will leave your order at the door.
+          </Text>
+        </View>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.orderNow}>ORDER NOW</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.dismissBtn}>
+          <Text style={styles.dismiss}>DISMISS</Text>
+        </TouchableOpacity>
+      </View>
+    </ImageBackground>
+    // </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: "#fff",
   },
   bottomView: {
     height: "70%",
@@ -27,8 +60,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F5F5",
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    alignItems: "center",
-    justifyContent: "center",
   },
   title: {
     color: "#2D0C57",
